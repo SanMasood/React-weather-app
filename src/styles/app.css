@@ -1,0 +1,9 @@
+.forecast {
+    margin: 0 20px 0 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgba(196, 225, 245, 0.39);
+    border-style: dotted; 
+    border-radius: 0.5em;
+    padding-bottom: 10px;
+    
+}

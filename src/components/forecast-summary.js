@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import '../styles/forecast-summaries.css';
+
 
 const ForecastSummary = props =>
  <h2 className="forecastSummaryClass" >

@@ -5,6 +5,9 @@ import LocationDetails from './location-details'
 //import ForecastSummary from './forecast-summary'
 import ForecastSummaries from './forecast-summaries'
 
+import '../styles/app.css'
+import '../styles/forecast-summaries.css'
+
 
 const App = (props) =>
 <div className="forecast" >

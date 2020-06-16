@@ -1,0 +1,11 @@
+.forecastSummaries {
+    display: flex;
+    justify-content: space-between;
+}
+
+.forecastSummaryClass {
+    background-color: rgba(252, 231, 185, 0.432);
+    border-radius: .5em;
+    font-family: 'Lucida Grande', 'Lucida Sans';
+    margin: auto;
+}
