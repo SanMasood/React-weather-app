@@ -23,9 +23,9 @@ it("renders the correct props", () => {
     const { getByText } = render(
       <ForecastSummary
         date={"mockDate"}
-        icon="mockIcon"
-        temperature="mockTemperature"
-        description="mockDescription"
+        icon={"mockIcon"}
+        temperature="mockTemperature °C"
+        description={"mockDescription"}
       />
     );
 
@@ -33,5 +33,5 @@ it("renders the correct props", () => {
     expect(getByText("mockIcon")).toHaveClass("icon");
     expect(getByText("mockTemperature °C")).toHaveClass("temperature");
     expect(getByText("mockDescription")).toHaveClass("description");
-  });
-});
+  })
+})

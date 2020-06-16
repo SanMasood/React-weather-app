@@ -3,13 +3,27 @@ import PropTypes from 'prop-types';
 import '../styles/forecast-summaries.css';
 
 
-const ForecastSummary = props =>
- <h2 className="forecastSummaryClass" >
-    <div> <span className="date">{props.date}</span></div>
-    <div> <span className="icon">{props.icon}</span></div>
-    <div> <span className="temperature">{props.temperature} &deg;C</span></div>
-    <div> <span className="description">{props.description}</span></div>
-</h2>
+const ForecastSummary = ({date, temperature, description, icon}) =>
+
+{
+    return (
+        <div className="FCClass">
+        <>
+        <div className="date" data-testid="date-id">{date} </div>
+
+        <div className="temperature" data-testid="temperature-id">{temperature} °C  </div>
+
+        <div className="icon" data-testid="icon-id">{icon} </div>
+        <div className="description" data-testid="description-id">{description} </div>
+        
+
+         <button value={date}>
+            More Details        
+    </button> 
+</>
+</div>
+    )
+}
 
 ForecastSummary.propTypes ={
     date: PropTypes.number.isRequired,
