@@ -10,9 +10,9 @@ describe("ForecastSummary", () => {
     const { asFragment } = render(
       <ForecastSummary
         date="mockDate"
+        icon="mockIcon"
         temperature="mockTemperature"
         description="mockDescription"
-        icon="mockIcon"
       />
     );
 
@@ -23,15 +23,15 @@ it("renders the correct props", () => {
     const { getByText } = render(
       <ForecastSummary
         date={"mockDate"}
+        icon="mockIcon"
         temperature="mockTemperature"
         description="mockDescription"
-        icon="mockIcon"
       />
     );
 
     expect(getByText("mockDate")).toHaveClass("date");
+    expect(getByText("mockIcon")).toHaveClass("icon");
     expect(getByText("mockTemperature °C")).toHaveClass("temperature");
     expect(getByText("mockDescription")).toHaveClass("description");
-    expect(getByText("mockIcon")).toHaveClass("icon");
   });
 });
