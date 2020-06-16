@@ -8,6 +8,7 @@ const ForecastSummaries = props => (
 {
     props.forecasts.map(forecast=> (
         <ForecastSummary
+        key={forecast.date}
         date={forecast.date}
         description={forecast.description}
         icon={forecast.icon}

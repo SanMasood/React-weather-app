@@ -22,7 +22,7 @@ describe("ForecastSummary", () => {
 it("renders the correct props", () => {
     const { getByText } = render(
       <ForecastSummary
-        date="mockDate"
+        date={"mockDate"}
         temperature="mockTemperature"
         description="mockDescription"
         icon="mockIcon"
@@ -30,7 +30,7 @@ it("renders the correct props", () => {
     );
 
     expect(getByText("mockDate")).toHaveClass("date");
-    expect(getByText("mockTemperature")).toHaveClass("temperature");
+    expect(getByText("mockTemperature °C")).toHaveClass("temperature");
     expect(getByText("mockDescription")).toHaveClass("description");
     expect(getByText("mockIcon")).toHaveClass("icon");
   });
