@@ -11,10 +11,9 @@ LocationDetails.propTypes ={
 
 }
 
-LocationDetails.defaultProps ={
+/*LocationDetails.defaultProps ={
     city: "London",
     country : "United Kingdom",
-
-}
+}*/
 
 export default LocationDetails;
