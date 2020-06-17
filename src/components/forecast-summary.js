@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import WeatherIcon from 'react-icons-weather';
 import '../styles/forecast-summaries.css';
 
-const symbol = "&#8451;"
 const ForecastSummary = ({date, temperature, description, icon}) =>
 
 {
@@ -14,7 +14,8 @@ const ForecastSummary = ({date, temperature, description, icon}) =>
 
         <div className="temperature" data-testid="temperature-id">{temperature} °C</div>
 
-        <div className="icon" data-testid="icon-id">{icon} </div>
+        <div className="forecast-summary-icon" data-testid="icon-id"> <WeatherIcon name="owm" iconId={icon} 
+        /></div>
         <div className="description" data-testid="description-id">{description} </div>
         
 

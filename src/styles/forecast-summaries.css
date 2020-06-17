@@ -7,6 +7,14 @@
 .FCClass {
     background-color: rgba(252, 231, 185, 0.432);
     border-radius: .5em;
+    
     font-family: 'Lucida Grande', 'Lucida Sans';
     margin: auto;
+    padding: 1%;
+}
+.forecast-summary-icon {
+    font-size: 2em;
+    text-align: center;
+    color: rgb(197, 111, 111);
+
 }

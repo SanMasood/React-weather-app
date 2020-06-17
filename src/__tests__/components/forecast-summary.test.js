@@ -1,5 +1,5 @@
 import React from "react";
-import { cleanup, render } from "@testing-library/react";
+import { cleanup, render, getByTestId } from "@testing-library/react";
 import ForecastSummary from "../../components/forecast-summary";
 
 afterEach(cleanup);
@@ -9,10 +9,10 @@ describe("ForecastSummary", () => {
   it("renders correctly", () => {
     const { asFragment } = render(
       <ForecastSummary
-        date="mockDate"
-        icon="mockIcon"
-        temperature="mockTemperature"
-        description="mockDescription"
+        date={1525132800000}
+        icon='500'
+        temperature={45}
+        description={"Hazy"}
       />
     );
 
@@ -20,18 +20,22 @@ describe("ForecastSummary", () => {
   });
 
 it("renders the correct props", () => {
-    const { getByText } = render(
+    const { getByTestId } = render(
       <ForecastSummary
-        date = {"mockDate"}
-        icon={"mockIcon"}
-        temperature={"mockTemperature"}
-        description={"mockDescription"}
+        date = {1525132800000}
+        icon='500'
+        temperature={45}
+        description={"Hazy"}
       />
     );
 
-    expect(getByText("mockDate")).toHaveClass("date");
-    expect(getByText("mockIcon")).toHaveClass("icon");
-    expect(getByText("mockTemperature °C")).toHaveClass("temperature");
-    expect(getByText("mockDescription")).toHaveClass("description");
+    expect(getByTestId('date-id')).toHaveClass("date");
+    expect(getByTestId("icon-id")).toHaveClass("forecast-summary-icon");
+    expect(getByTestId("temperature-id")).toHaveClass("temperature");
+    expect(getByTestId("description-id")).toHaveClass("description");
+  })
+  xit ("renders the icon correctly", () => {
+
+
   })
 })
