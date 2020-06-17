@@ -16,6 +16,7 @@ const ForecastSummary = ({date, temperature, description, icon}) =>
 
         <div className="forecast-summary-icon" data-testid="icon-id"> <WeatherIcon name="owm" iconId={icon} 
         /></div>
+        
         <div className="description" data-testid="description-id">{description} </div>
         
 
