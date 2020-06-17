@@ -22,9 +22,9 @@ describe("ForecastSummary", () => {
 it("renders the correct props", () => {
     const { getByText } = render(
       <ForecastSummary
-        date={"mockDate"}
+        date = {"mockDate"}
         icon={"mockIcon"}
-        temperature="mockTemperature °C"
+        temperature={"mockTemperature"}
         description={"mockDescription"}
       />
     );

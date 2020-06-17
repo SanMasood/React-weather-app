@@ -11,7 +11,7 @@ describe("Forecast Summaries", () => {
             description: "Hazy",
             icon: "icon1",
             temperature: {
-                max: "40 °C",
+                max: "40",
             },
         }, 
         {
@@ -19,7 +19,7 @@ describe("Forecast Summaries", () => {
             description: "Foggy",
             icon: "icon2",
             temperature: {
-                max: "45 °C",
+                max: "45",
             },
         }
 
