@@ -1,6 +1,8 @@
 import React from "react";
 import { cleanup, render, getByTestId } from "@testing-library/react";
 import ForecastSummary from "../../components/forecast-summary";
+import ForecastSummaries from "../../components/forecast-summaries";
+
 
 afterEach(cleanup);
 
@@ -29,13 +31,12 @@ it("renders the correct props", () => {
       />
     );
 
-    expect(getByTestId('date-id')).toHaveClass("date");
+    expect(getByTestId("date-id")).toHaveClass("forecast-summary-date");
     expect(getByTestId("icon-id")).toHaveClass("forecast-summary-icon");
     expect(getByTestId("temperature-id")).toHaveClass("temperature");
     expect(getByTestId("description-id")).toHaveClass("description");
   })
-  xit ("renders the icon correctly", () => {
 
-
-  })
+ 
+  
 })

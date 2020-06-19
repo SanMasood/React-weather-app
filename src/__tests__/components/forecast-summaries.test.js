@@ -40,4 +40,5 @@ describe("Forecast Summaries", () => {
         expect(getAllByTestId("temperature-id")).toHaveLength(2);
 
     })
+    
 })

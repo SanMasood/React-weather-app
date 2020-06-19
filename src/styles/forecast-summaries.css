@@ -12,6 +12,9 @@
     margin: auto;
     padding: 1%;
 }
+.FDClass {
+    text-align: center;
+}
 .forecast-summary-icon {
     font-size: 2em;
     text-align: center;
