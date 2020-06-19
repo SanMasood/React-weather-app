@@ -13,21 +13,20 @@ const ForecastDetails = (props) => (
     <div className="forecast-details-date" data-testid="date-id"><h3>
     {moment(props.forecasts.date).format('ddd Do MMM')}</h3></div>
 
-    <div className="forecast-details-max-temp" data-testid="max-temp">
+    <div className="forecast-details-max-temp" data-testid="max-temp-id">
     <b>Max Temperature:</b> {props.forecasts.temperature.max} °C</div>
 
-    <div className="forecast-details-min-temp" data-testid="min-temp">
+    <div className="forecast-details-min-temp" data-testid="min-temp-id">
     <b>Min Temperature:</b> {props.forecasts.temperature.min} °C</div>
             
     <div className="forecast-details-humidity" data-testid="humidity-id">
     <b>Humidity: </b>{props.forecasts.humidity}%</div>   
 
     <div className="wind-speed" data-testid="wind-speed-id">
-    <b>Wind: </b>{props.forecasts.wind.speed} mph due {props.forecasts.wind.direction}</div>          
+    <b>Wind: </b>{props.forecasts.wind.speed} mph due {props.forecasts.wind.direction.toUpperCase()}</div>          
         
     </div>
 )
-    
 
 ForecastDetails.propTypes = {
     forecasts: PropTypes.shape({
@@ -36,7 +35,5 @@ ForecastDetails.propTypes = {
         humidity: PropTypes.string.isRequired,
         wind: PropTypes.object.isRequired,
     }),
-};
-
-    
+};    
 export default ForecastDetails;
