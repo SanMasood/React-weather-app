@@ -13,6 +13,9 @@ const App = (props) => {
 const [selectedDate, setSelectedDate] = useState(props.forecasts[0].date);
 
 const selectedForecast = props.forecasts.find(forecast => forecast.date === selectedDate);
+
+const handleForecastSelect = (date) => {setSelectedDate(date);}
+
 return (
     
 <div className="forecast" >
@@ -21,8 +24,10 @@ return (
 city={props.location.city} 
 country={props.location.country} />
 
-<ForecastSummaries forecasts = {props.forecasts}/>
-<ForecastDetails forecast = {props.forecasts[1]} />
+<ForecastSummaries forecasts = {props.forecasts} 
+onForecastSelect={handleForecastSelect}  />
+
+<ForecastDetails forecast = {selectedForecast} />
 
 </div>
 
