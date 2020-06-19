@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import LocationDetails from './location-details'
@@ -8,7 +8,13 @@ import ForecastSummaries from './forecast-summaries'
 import '../styles/app.css'
 import '../styles/forecast-summaries.css'
 
-const App = (props) =>
+const App = (props) => {
+
+const [selectedDate, setSelectedDate] = useState(props.forecasts[0].date);
+
+const selectedForecast = props.forecasts.find(forecast => forecast.date === selectedDate);
+return (
+    
 <div className="forecast" >
 
 <LocationDetails 
@@ -16,9 +22,12 @@ city={props.location.city}
 country={props.location.country} />
 
 <ForecastSummaries forecasts = {props.forecasts}/>
-<ForecastDetails forecasts = {props.forecasts[0]} />
+<ForecastDetails forecast = {props.forecasts[1]} />
 
 </div>
+
+);
+}
 
 App.propTypes = {
     location: PropTypes.shape ({
