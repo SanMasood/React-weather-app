@@ -2,13 +2,11 @@ import React from 'react';
 import { render } from 'react-dom';
 import './index.css';
 import App from './components/app';
-import {location, forecasts} from './data/forecast.json'
 
 import * as serviceWorker from './serviceWorker';
 
 render(
-    <App location = {location}
-     forecasts = {forecasts} />, 
+    <App  />, 
   document.getElementById('root')
 );
 

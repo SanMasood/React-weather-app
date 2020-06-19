@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-import PropTypes from 'prop-types';
 
 import LocationDetails from './location-details'
 import ForecastDetails from './forecast-details'
@@ -8,11 +6,35 @@ import ForecastSummaries from './forecast-summaries'
 import '../styles/app.css'
 import '../styles/forecast-summaries.css'
 
-const App = (props) => {
+import React, { useState, useEffect } from 'react';
+const axios = require('axios');
 
-const [selectedDate, setSelectedDate] = useState(props.forecasts[0].date);
 
-const selectedForecast = props.forecasts.find(forecast => forecast.date === selectedDate);
+
+
+const App = () => {
+
+const [selectedDate, setSelectedDate] = useState(0); //starting value
+const [forecasts, setForecasts] = useState([]);
+const [location, setLocation] = useState({
+    city: '',
+    country: '',
+});
+
+useEffect (() => {
+    axios
+    .get('https://mcr-codes-weather.herokuapp.com/forecast')
+    .then((res) => {
+        setForecasts(res.data.forecasts);
+        setLocation(res.data.location);
+    })
+    /*.catch(err => {
+        if(err.res)
+        alert('Error loading Weather');
+    })*/
+});
+
+const selectedForecast = forecasts.find(forecast => forecast.date === selectedDate);
 
 const handleForecastSelect = (date) => {setSelectedDate(date);}
 
@@ -21,25 +43,19 @@ return (
 <div className="forecast" >
 
 <LocationDetails 
-city={props.location.city} 
-country={props.location.country} />
+city={location.city} 
+country={location.country} />
 
-<ForecastSummaries forecasts = {props.forecasts} 
+<ForecastSummaries forecasts = {forecasts} 
 onForecastSelect={handleForecastSelect}  />
 
-<ForecastDetails forecast = {selectedForecast} />
-
+{
+    selectedForecast && (<ForecastDetails forecast = {selectedForecast} />)
+}
 </div>
 
 );
 }
 
-App.propTypes = {
-    location: PropTypes.shape ({
-        city: PropTypes.string,
-        country: PropTypes.string,
-    }).isRequired,
-    forecasts: PropTypes.array.isRequired,
-};
 
 export default App;
