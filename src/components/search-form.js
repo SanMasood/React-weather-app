@@ -10,10 +10,10 @@ const handleInputChange = event => {
 
 return (
 <div className="searchForm">
-    <span><input type="text" className="city-search" onChange={ handleInputChange }
+    <span><b>Enter City:</b> <input type="text" className="city-search" onChange={ handleInputChange }
     placeholder="Type city here" value={searchText}/> </span>
 
-    <span><button type="submit" onClick={() => props.onCitySearch(searchText)}>Go </button></span>
+    <span><button className="button1" type="submit" onClick={() => props.onCitySearch(searchText)}>Go </button></span>
 
 </div>
 );

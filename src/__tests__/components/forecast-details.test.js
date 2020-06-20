@@ -27,7 +27,7 @@ describe("Forecast Details", () => {
 
     });
 
-    it("renders the correct amount of ForecastDetails component props", () => {
+    it("renders the correct amount of ForecastDetail component props", () => {
         const { getByTestId } = render (<ForecastDetails forecasts = {mockForecast} />);
 
         expect(getByTestId("date-id")).toHaveClass("forecast-details-date");

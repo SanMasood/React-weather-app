@@ -1,15 +1,18 @@
 .locationDetailsClass{
     text-align: center;
-    color: rgba(82, 3, 42, 0.527);
+    color: rgba(228, 208, 29, 0.87);
 }
 
 
 .forecast {
     margin: 0 5% 0 5%;
     font-family: Arial, Helvetica, sans-serif;
-    background-color: rgba(196, 225, 245, 0.39);
+    
+    background-image: url('https://wallpapercave.com/wp/wp2394185.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
     border-style: solid;
-    border-color: rgb(252, 212, 220);
+    border-color: rgb(3, 20, 117);
     border-radius: 0.5em;
     padding-bottom: 10px;
     
@@ -21,5 +24,13 @@
        }
     .FCClass {
        margin: 5%;
+    }
+}
+@media screen and (max-width: 915px) {
+    .forecast{
+        background-repeat: repeat;
+    }
+    .FDClass {
+        width: 70%
     }
 }

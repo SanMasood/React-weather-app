@@ -6,6 +6,9 @@ import SearchForm from './search-form'
 
 import '../styles/app.css'
 import '../styles/forecast-summaries.css'
+import '../styles/buttons.css'
+
+
 
 import React, { useState, useEffect } from 'react';
 const axios = require('axios');
@@ -18,7 +21,6 @@ const [location, setLocation] = useState({
     city: '',
     country: '',
 });
-//const searchText = useState('');
 
 useEffect (() => { 
     if (forecasts.length===0){
@@ -29,7 +31,6 @@ useEffect (() => {
         setLocation(res.data.location);
     })
     .catch(err => {
-        if(err.res)
         alert('Error loading Weather');
     })
 }
@@ -51,7 +52,6 @@ const citySearch = (city) => {
 const selectedForecast = forecasts.find(forecast => forecast.date === selectedDate);
 
 const handleForecastSelect = (date) => {setSelectedDate(date);}
-//const handleInputChange = (value) => {event.target.value}
 
 return (
     

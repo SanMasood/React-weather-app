@@ -3,9 +3,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import moment from 'moment';
 
-//import '../styles/forecast-summaries.css';
-
-
 const ForecastDetails = (props) => (
     
     <div className="FDClass">
